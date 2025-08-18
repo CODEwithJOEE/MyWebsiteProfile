@@ -1,0 +1,176 @@
+/* Container card */
+.resume {
+  background: var(--heading-color);
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Header area */
+.resume-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.resume-header h1 {
+  color: var(--accent-color);
+  font-size: clamp(1.6rem, 1.2vw + 1.2rem, 2.2rem);
+  margin: 0 0 0.4rem;
+}
+.resume-header .intro {
+  color: var(--surface-color);
+  margin: 0.25rem auto 0.75rem;
+  max-width: 70ch;
+}
+
+/* Grid */
+.resume-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(1rem, 3vw, 2rem);
+  margin-top: 1rem;
+}
+
+/* Card section */
+.card {
+  border: 1px solid rgba(255,255,255,0.12);
+  background: linear-gradient(180deg, #0c1526 0%, #0a1220 100%);
+  color: var(--contrast-color);
+  padding: 1rem 1.1rem;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  transition: transform 0.18s ease, border-color 0.18s ease;
+}
+.card:hover { transform: translateY(-3px); border-color: var(--accent-color); }
+
+.section-title {
+  color: var(--accent-color);
+  font-size: 1.05rem;
+  margin: 0 0 0.6rem;
+}
+
+/* Timeline */
+.timeline {
+  --line: rgba(255,255,255,0.14);
+  --dot: var(--accent-color);
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0 0 0 0.25rem;
+  position: relative;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0.25rem;
+  bottom: 0.25rem;
+  width: 2px;
+  background: var(--line);
+}
+.timeline-item {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 0.6rem;
+  position: relative;
+  padding-bottom: 0.6rem;
+}
+.timeline-dot {
+  width: 14px;
+  height: 14px;
+  background: var(--dot);
+  border-radius: 50%;
+  margin: 4px 0 0 3px;
+  box-shadow: 0 0 0 3px rgba(20,157,221,0.18);
+}
+.timeline-content h3 {
+  margin: 0;
+  color: var(--accent-color);
+  font-size: 1.02rem;
+}
+.timeline-content .meta {
+  color: var(--nav-color);
+  font-size: 0.92rem;
+  margin: 0.15rem 0 0.25rem;
+}
+.timeline-content p {
+  margin: 0 0 0.4rem;
+  color: var(--surface-color);
+}
+
+/* Lists & badges */
+.bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.6rem 0 0.8rem;
+}
+.bullet-list li {
+  position: relative;
+  padding-left: 1.25rem;
+  color: var(--surface-color);
+  margin-bottom: 0.35rem;
+}
+.bullet-list li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+.skill-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+}
+.badge {
+  display: inline-block;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 999px;
+  color: var(--surface-color);
+  background: rgba(255,255,255,0.06);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+/* Buttons (reuse global look) */
+.btn-row { display: flex; gap: 0.6rem; justify-content: center; margin-top: 0.6rem; }
+.btn { /* already styled in main.css/global.css; these ensure parity if resume used alone */
+  display: inline-block;
+  padding: 0.7rem 1.1rem;
+  border-radius: 10px;
+  border: 2px solid var(--accent-color);
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  font-weight: 700;
+  box-shadow: var(--shadow);
+  transition: transform 0.15s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn.btn-outline { background: transparent; color: var(--accent-color); }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .resume-grid { grid-template-columns: 1fr; }
+}
+
+/* Print-friendly */
+@media print {
+  :root { --background-color: #ffffff; }
+  body { background: #ffffff; color: #000; }
+  .site-header, .site-footer, .hamburger, .btn-row { display: none !important; }
+  .resume, .card {
+    box-shadow: none;
+    background: #fff;
+    color: #000;
+    border: 1px solid #ddd;
+  }
+  a { color: #000; text-decoration: underline; }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

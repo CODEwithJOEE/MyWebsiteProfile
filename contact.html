@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact Me! | Portfolio</title>
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" role="banner">
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html" class="logo">MyProfile</a>
+
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="Open menu"
+          aria-controls="primary-nav"
+          aria-expanded="false"
+        >
+          <span class="bar"></span><span class="bar"></span
+          ><span class="bar"></span>
+        </button>
+
+        <ul id="primary-nav" class="nav-links" role="menubar">
+          <li role="none"><a role="menuitem" href="index.html">Home</a></li>
+          <li role="none"><a role="menuitem" href="about.html">About</a></li>
+          <li role="none">
+            <a role="menuitem" href="resume.html">My Resume</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="service.html">Services</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" class="active" href="#main">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+      <!-- Hero -->
+      <section class="section contact-hero" aria-labelledby="contact-title">
+        <div class="container">
+          <h1 id="contact-title">Contact Me</h1>
+          <p class="intro">
+            Have a project idea, school collaboration, or just want to connect?
+            I’m always open to opportunities and learning experiences!
+          </p>
+        </div>
+      </section>
+
+      <!-- Cards + Form -->
+      <section class="section" aria-labelledby="reach-me">
+        <div class="container contact">
+          <h2 id="reach-me" class="visually-hidden">Ways to reach me</h2>
+
+          <div class="contact-grid">
+            <article class="contact-card">
+              <div class="icon" aria-hidden="true">📍</div>
+              <h3>Location</h3>
+              <p>
+                <a
+                  href="https://www.google.com/maps?q=San+Antonio,+Manukan,+Zamboanga+del+Norte"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  SAN ANTONIO, MANUKAN, ZAMBOANGA DEL NORTE
+                </a>
+              </p>
+            </article>
+
+            <article class="contact-card">
+              <div class="icon" aria-hidden="true">📱</div>
+              <h3>Mobile</h3>
+              <p>
+                <a href="tel:+639103077457">+63 910 307 7457</a><br />
+                <a href="sms:+639103077457">Send SMS</a>
+              </p>
+            </article>
+
+            <article class="contact-card">
+              <div class="icon" aria-hidden="true">✉️</div>
+              <h3>Email</h3>
+              <p>
+                <a id="emailLink" href="mailto:bunalanjohnclerk@gmail.com"
+                  >bunalanjohnclerk@gmail.com</a
+                >
+              </p>
+              <button
+                class="btn btn-outline small"
+                id="copyEmail"
+                type="button"
+              >
+                Copy email
+              </button>
+            </article>
+          </div>
+
+          <!-- No-backend Email Form -->
+          <form
+            id="contactForm"
+            class="contact-form"
+            aria-labelledby="form-title"
+          >
+            <h2 id="form-title">Send a Message</h2>
+            <div class="form-row">
+              <label for="name">Your Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                required
+              />
+            </div>
+
+            <div class="form-row">
+              <label for="reply">Your Email</label>
+              <input
+                id="reply"
+                name="reply"
+                type="email"
+                autocomplete="email"
+                required
+              />
+            </div>
+
+            <div class="form-row">
+              <label for="subject">Subject</label>
+              <input id="subject" name="subject" type="text" required />
+            </div>
+
+            <div class="form-row">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+
+            <div class="btn-row">
+              <button class="btn" type="submit">Open Email App</button>
+              <a class="btn btn-outline" href="resume.html">View Resume</a>
+            </div>
+
+            <p class="privacy-hint">
+              This form opens your email app using <code>mailto:</code>. No data
+              is stored on a server.
+            </p>
+          </form>
+
+          <div class="closing-message">
+            <p>
+              I’m currently a student building real-world experience—thanks for
+              your message! I’ll respond as soon as I can.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <p>© 2025 John Clerk Cavalida Bonalan | All Rights Reserved</p>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile nav toggle with accessibility
+      const hamburger = document.getElementById("hamburger");
+      const nav = document.getElementById("primary-nav");
+      function toggleMenu(force) {
+        const wantOpen =
+          typeof force === "boolean"
+            ? force
+            : !nav.classList.contains("active");
+        nav.classList.toggle("active", wantOpen);
+        hamburger.setAttribute("aria-expanded", String(wantOpen));
+      }
+      hamburger.addEventListener("click", () => toggleMenu());
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") toggleMenu(false);
+      });
+
+      // Copy email
+      document
+        .getElementById("copyEmail")
+        .addEventListener("click", async () => {
+          const email = "bunalanjohnclerk@gmail.com";
+          try {
+            await navigator.clipboard.writeText(email);
+            document.getElementById("copyEmail").textContent = "Copied!";
+            setTimeout(
+              () =>
+                (document.getElementById("copyEmail").textContent =
+                  "Copy email"),
+              1500
+            );
+          } catch (e) {}
+        });
+
+      // Mailto form (no backend)
+      document.getElementById("contactForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = document.getElementById("name").value.trim();
+        const reply = document.getElementById("reply").value.trim();
+        const subject = document.getElementById("subject").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        const bodyLines = [`Name: ${name}`, `Email: ${reply}`, "", message];
+        const body = encodeURIComponent(bodyLines.join("\\n"));
+        const mailto = `mailto:bunalanjohnclerk@gmail.com?subject=${encodeURIComponent(
+          subject
+        )}&body=${body}`;
+        window.location.href = mailto;
+      });
+    </script>
+  </body>
+</html>

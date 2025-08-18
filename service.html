@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Services | Portfolio</title>
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/service.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" role="banner">
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html" class="logo">MyProfile</a>
+
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="Open menu"
+          aria-controls="primary-nav"
+          aria-expanded="false"
+        >
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <ul id="primary-nav" class="nav-links" role="menubar">
+          <li role="none"><a role="menuitem" href="index.html">Home</a></li>
+          <li role="none"><a role="menuitem" href="about.html">About</a></li>
+          <li role="none">
+            <a role="menuitem" href="resume.html">My Resume</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" class="active" href="#main">Services</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+      <!-- Top hero -->
+      <section class="section services-hero" aria-labelledby="svc-title">
+        <div class="container">
+          <h1 id="svc-title">Services</h1>
+          <p class="intro">
+            I offer web and tech solutions focused on clean design,
+            responsiveness, and results. From landing pages to student-friendly
+            tooling, I bring technical care and attention to detail to every
+            project.
+          </p>
+          <div class="btn-row hero-ctas">
+            <a class="btn" href="contact.html">Start a Project</a>
+            <a class="btn btn-outline" href="resume.html">View My Resume</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services grid -->
+      <section class="section" aria-labelledby="svc-list-title">
+        <div class="container">
+          <h2 id="svc-list-title" class="visually-hidden">Service List</h2>
+
+          <div class="service-grid">
+            <!-- Card -->
+            <article class="service-card">
+              <div class="icon" aria-hidden="true">💡</div>
+              <h3>Landing Page Design &amp; Practice</h3>
+              <p class="description">
+                Clean, mobile-first pages with HTML, CSS, and JavaScript—great
+                for personal brands, student portfolios, or small product
+                concepts.
+              </p>
+              <div class="chips" role="list">
+                <span class="chip" role="listitem">Responsive</span>
+                <span class="chip" role="listitem">HTML/CSS/JS</span>
+                <span class="chip" role="listitem">Accessibility</span>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <div class="icon" aria-hidden="true">📊</div>
+              <h3>Intro to Business &amp; Analytics Tools</h3>
+              <p class="description">
+                Basic visualization and reporting using Excel/Google Sheets;
+                exploring dashboards with Looker Studio and simple feasibility
+                write-ups.
+              </p>
+              <div class="chips" role="list">
+                <span class="chip" role="listitem">Sheets/Excel</span>
+                <span class="chip" role="listitem">Looker Studio</span>
+                <span class="chip" role="listitem">Dashboards</span>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <div class="icon" aria-hidden="true">🎨</div>
+              <h3>Beginner Web Design</h3>
+              <p class="description">
+                Mockups in Figma/Canva, translated into responsive pages.
+                Learning WordPress editing with Elementor and modern themes.
+              </p>
+              <div class="chips" role="list">
+                <span class="chip" role="listitem">Figma</span>
+                <span class="chip" role="listitem">Canva</span>
+                <span class="chip" role="listitem">WordPress</span>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <div class="icon" aria-hidden="true">🧩</div>
+              <h3>Frontend Development (In Progress)</h3>
+              <p class="description">
+                Building responsive layouts with HTML/CSS/JS; currently learning
+                React and version control (Git/GitHub). Focused on UI/UX polish.
+              </p>
+              <div class="chips" role="list">
+                <span class="chip" role="listitem">React (learning)</span>
+                <span class="chip" role="listitem">Git/GitHub</span>
+                <span class="chip" role="listitem">UI/UX</span>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <div class="icon" aria-hidden="true">🧰</div>
+              <h3>Tech Virtual Support (Student-Based)</h3>
+              <p class="description">
+                Help with file organization, formatting docs, Google
+                Forms/Sheets, and simple team collaboration using Notion or
+                Trello.
+              </p>
+              <div class="chips" role="list">
+                <span class="chip" role="listitem">Notion</span>
+                <span class="chip" role="listitem">Trello</span>
+                <span class="chip" role="listitem">Docs/Forms</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ (no JS) -->
+      <section class="section faq" aria-labelledby="faq-title">
+        <div class="container">
+          <h2 id="faq-title">FAQ</h2>
+          <details>
+            <summary>Do you take small student projects?</summary>
+            <p>
+              Yes—short, well-scoped projects are perfect for quick wins and
+              portfolio practice.
+            </p>
+          </details>
+          <details>
+            <summary>What’s the usual turnaround?</summary>
+            <p>
+              For simple pages, 2–5 days depending on content readiness and
+              revisions.
+            </p>
+          </details>
+          <details>
+            <summary>Which tools do you prefer?</summary>
+            <p>
+              HTML, CSS, JavaScript, WordPress (Elementor), Figma/Canva, and
+              Google Workspace.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <!-- CTA banner -->
+      <section class="cta section" aria-labelledby="cta-title">
+        <div class="container cta-inner">
+          <div>
+            <h2 id="cta-title">Have an idea to build?</h2>
+            <p>Let’s turn it into a clean, responsive page you can share.</p>
+          </div>
+          <a class="btn" href="contact.html">Contact Me</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <p>© 2025 John Clerk Cavalida Bonalan | All Rights Reserved</p>
+      </div>
+    </footer>
+
+    <script>
+      // Accessible mobile nav
+      const hamburger = document.getElementById("hamburger");
+      const nav = document.getElementById("primary-nav");
+
+      function toggleMenu(force) {
+        const wantOpen =
+          typeof force === "boolean"
+            ? force
+            : !nav.classList.contains("active");
+        nav.classList.toggle("active", wantOpen);
+        hamburger.setAttribute("aria-expanded", String(wantOpen));
+      }
+      hamburger.addEventListener("click", () => toggleMenu());
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") toggleMenu(false);
+      });
+    </script>
+  </body>
+</html>

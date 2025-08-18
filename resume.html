@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Resume | Portfolio</title>
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/resume.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" role="banner">
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html" class="logo">MyProfile</a>
+
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="Open menu"
+          aria-controls="primary-nav"
+          aria-expanded="false"
+        >
+          <span class="bar"></span><span class="bar"></span
+          ><span class="bar"></span>
+        </button>
+
+        <ul id="primary-nav" class="nav-links" role="menubar">
+          <li role="none"><a role="menuitem" href="index.html">Home</a></li>
+          <li role="none"><a role="menuitem" href="about.html">About</a></li>
+          <li role="none">
+            <a role="menuitem" class="active" href="resume.html">My Resume</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="service.html">Services</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main" class="section" aria-labelledby="resume-title">
+      <div class="container resume">
+        <header class="resume-header">
+          <h1 id="resume-title">My Resume</h1>
+          <p class="intro">
+            An overview of my education, goals, and current trajectory as a web
+            developer.
+          </p>
+          <div class="btn-row">
+            <!-- Replace resume.pdf with your actual file path if you have it -->
+            <a class="btn" href="assets/resume.pdf" download>Download PDF</a>
+            <a class="btn btn-outline" href="contact.html">Contact Me</a>
+          </div>
+        </header>
+
+        <div class="resume-grid">
+          <!-- LEFT COLUMN -->
+          <section class="card" aria-labelledby="edu-title">
+            <h2 id="edu-title" class="section-title">Education</h2>
+
+            <ol class="timeline" aria-label="Education timeline">
+              <li class="timeline-item">
+                <div class="timeline-dot" aria-hidden="true"></div>
+                <div class="timeline-content">
+                  <h3>San Antonio Elementary School</h3>
+                  <p class="meta">2016 – 2017</p>
+                  <p>Completed elementary education.</p>
+                </div>
+              </li>
+
+              <li class="timeline-item">
+                <div class="timeline-dot" aria-hidden="true"></div>
+                <div class="timeline-content">
+                  <h3>Jesus A. Ramos National High School</h3>
+                  <p class="meta">2020 – 2021</p>
+                  <p>Focused on technology and problem-solving.</p>
+                </div>
+              </li>
+
+              <li class="timeline-item">
+                <div class="timeline-dot" aria-hidden="true"></div>
+                <div class="timeline-content">
+                  <h3>Jesus A. Ramos Senior High School</h3>
+                  <p class="meta">2021 – 2023</p>
+                  <p>
+                    <em>HUMSS</em> — Strengthened communication and critical
+                    thinking.
+                  </p>
+                </div>
+              </li>
+
+              <li class="timeline-item">
+                <div class="timeline-dot" aria-hidden="true"></div>
+                <div class="timeline-content">
+                  <h3>
+                    Jose Rizal Memorial State University – Katipunan Campus
+                  </h3>
+                  <p class="meta">2023 – Present</p>
+                  <p>
+                    <em>Bachelor of Science in Information Systems (BSIS)</em>
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </section>
+
+          <!-- RIGHT COLUMN -->
+          <section class="card" aria-labelledby="career-title">
+            <h2 id="career-title" class="section-title">Career Objective</h2>
+            <p>
+              Aspiring Frontend Developer passionate about building visually
+              appealing, user-friendly websites. Currently focusing on
+              JavaScript, modern UI/UX, and WordPress CMS.
+            </p>
+
+            <h2 class="section-title">Journey &amp; Career Goals</h2>
+            <p>
+              My long-term goal is to become a full-stack developer who builds
+              accessible, SEO-friendly websites that make a real-world impact.
+            </p>
+
+            <ul class="bullet-list" role="list">
+              <li role="listitem">
+                Portfolio Website — responsive design with HTML, CSS, JavaScript
+              </li>
+              <li role="listitem">Blog Layout — practice with WordPress CMS</li>
+            </ul>
+
+            <!-- Optional quick badges -->
+            <div class="skill-badges" aria-label="Key focus areas">
+              <span class="badge">Accessibility</span>
+              <span class="badge">SEO</span>
+              <span class="badge">Responsive UI</span>
+              <span class="badge">WordPress</span>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <p>© 2025 John Clerk Cavalida Bonalan | All Rights Reserved</p>
+      </div>
+    </footer>
+
+    <script>
+      // Accessible mobile nav (same everywhere)
+      const hamburger = document.getElementById("hamburger");
+      const nav = document.getElementById("primary-nav");
+
+      function toggleMenu(force) {
+        const wantOpen =
+          typeof force === "boolean"
+            ? force
+            : !nav.classList.contains("active");
+        nav.classList.toggle("active", wantOpen);
+        hamburger.setAttribute("aria-expanded", String(wantOpen));
+      }
+
+      hamburger.addEventListener("click", () => toggleMenu());
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") toggleMenu(false);
+      });
+    </script>
+  </body>
+</html>

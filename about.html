@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About Me! | Portfolio</title>
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/about.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" role="banner">
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html" class="logo">MyProfile</a>
+
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="Open menu"
+          aria-controls="primary-nav"
+          aria-expanded="false"
+        >
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <ul id="primary-nav" class="nav-links" role="menubar">
+          <li role="none"><a role="menuitem" href="index.html">Home</a></li>
+          <li role="none">
+            <a role="menuitem" href="#about" class="active">About</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="resume.html">My Resume</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="service.html">Services</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+      <!-- About -->
+      <section id="about" class="section" aria-labelledby="about-title">
+        <div class="container">
+          <h1 id="about-title" class="page-title">About Me</h1>
+
+          <div class="about-content">
+            <!-- Left: Profile image -->
+            <figure class="about-media">
+              <img
+                src="img/my-profile-img1.jpeg"
+                alt="Portrait of John Clerk Cavalida Bonalan"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+
+            <!-- Right: Text -->
+            <div class="about-text">
+              <p class="lead">
+                Hi! I’m <strong>John Clerk Cavalida Bonalan</strong>, a
+                20-year-old Website and Frontend Developer with a passion for
+                building clean, responsive, and user-friendly websites. I turn
+                creative ideas into functional web experiences that look great
+                on any device.
+              </p>
+
+              <p>
+                I’m currently pursuing a
+                <em>Bachelor of Science in Information Systems (BSIS)</em>,
+                sharpening both technical and business skills to bridge
+                technology and real-world solutions.
+              </p>
+
+              <!-- Personal Info -->
+              <div class="personal-info" aria-labelledby="personal-info-title">
+                <h2 id="personal-info-title" class="visually-hidden">
+                  Personal Information
+                </h2>
+                <ul>
+                  <li><strong>Birthday:</strong> November 24, 2004</li>
+                  <li><strong>Age:</strong> 20</li>
+                  <li>
+                    <strong>Course:</strong> Bachelor of Science in Information
+                    Systems
+                  </li>
+                  <li><strong>Phone:</strong> 09103077457</li>
+                  <li>
+                    <strong>Email:</strong>
+                    <a href="mailto:bunalanjohnclerk@gmail.com"
+                      >bunalanjohnclerk@gmail.com</a
+                    >
+                  </li>
+                  <li>
+                    <strong>Address:</strong> SAN ANTONIO, MANUKAN, ZAMBOANGA
+                    del NORTE
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education / Resume preview -->
+      <section id="resume" class="section" aria-labelledby="resume-title">
+        <div class="container">
+          <h2 id="resume-title">Education</h2>
+
+          <div class="resume-grid">
+            <!-- LEFT COLUMN -->
+            <div class="resume-col">
+              <article class="resume-item">
+                <h3>San Antonio Elementary School</h3>
+                <p class="meta">2016 – 2017</p>
+                <p>Completed elementary education.</p>
+              </article>
+
+              <article class="resume-item">
+                <h3>Jesus A. Ramos National High School</h3>
+                <p class="meta">2020 – 2021</p>
+                <p>Focused on technology and problem-solving.</p>
+              </article>
+
+              <article class="resume-item">
+                <h3>Jesus A. Ramos Senior High School</h3>
+                <p class="meta">2021 – 2023</p>
+                <p>
+                  <em>HUMSS</em> — Strengthened communication and critical
+                  thinking.
+                </p>
+              </article>
+
+              <article class="resume-item">
+                <h3>Jose Rizal Memorial State University – Katipunan Campus</h3>
+                <p class="meta">2023 – Present</p>
+                <p>
+                  <em>Bachelor of Science in Information Systems (BSIS)</em>
+                </p>
+              </article>
+            </div>
+
+            <!-- RIGHT COLUMN (image) -->
+            <aside class="resume-image" aria-label="Career Journey Image">
+              <img
+                src="img/hero-bg.jpeg"
+                alt="Career journey visual"
+                loading="lazy"
+                decoding="async"
+              />
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" class="section" aria-labelledby="skills-title">
+        <div class="container">
+          <h2 id="skills-title">Skills</h2>
+          <ul class="skills-list" role="list">
+            <li role="listitem">PHP — currently learning</li>
+            <li role="listitem">HTML, CSS, JavaScript</li>
+            <li role="listitem">MySQL &amp; Database Design</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <p>© 2025 Janbert C. Regalado | All Rights Reserved</p>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile nav toggle with accessibility
+      const hamburger = document.getElementById("hamburger");
+      const nav = document.getElementById("primary-nav");
+
+      function toggleMenu(force) {
+        const wantOpen =
+          typeof force === "boolean"
+            ? force
+            : !nav.classList.contains("active");
+        nav.classList.toggle("active", wantOpen);
+        hamburger.setAttribute("aria-expanded", String(wantOpen));
+      }
+
+      hamburger.addEventListener("click", () => toggleMenu());
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") toggleMenu(false);
+      });
+    </script>
+  </body>
+</html>

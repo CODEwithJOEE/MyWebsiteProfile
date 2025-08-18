@@ -1,0 +1,195 @@
+/* Page title (keeps About visual consistent with index) */
+.page-title {
+  font-size: clamp(1.6rem, 1.2vw + 1.2rem, 2.2rem);
+  color: var(--accent-color);
+  text-align: center;
+  margin: 0 0 1.5rem;
+  position: relative;
+  font-weight: 800;
+}
+.page-title::after {
+  content: "";
+  width: 80px;
+  height: 3px;
+  background: var(--accent-color);
+  display: block;
+  margin: 0.5rem auto 0;
+  border-radius: 999px;
+}
+
+/* About layout */
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: clamp(1rem, 3vw, 2rem);
+  background: var(--heading-color);
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  align-items: start;
+}
+
+.about-media {
+  margin: 0;
+  align-self: stretch;
+  display: grid;
+}
+.about-media img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  object-fit: cover;
+  aspect-ratio: 4 / 5; /* keeps a nice portrait shape across sizes */
+}
+
+.about-text .lead {
+  margin-top: 0.25rem;
+}
+.about-text p {
+  margin: 0.75rem 0;
+  color: var(--surface-color);
+  font-size: clamp(0.98rem, 0.4vw + 0.9rem, 1.05rem);
+  line-height: 1.75;
+  text-align: justify;
+}
+.about-text strong { color: var(--accent-color); }
+
+/* Personal Info */
+.personal-info {
+  margin-top: 1.25rem;
+  background: transparent;
+}
+.personal-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.8rem;
+}
+.personal-info li {
+  background: var(--background-color);
+  color: var(--default-color);
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+}
+.personal-info li:hover {
+  transform: translateY(-3px);
+}
+.personal-info a {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+/* Resume grid */
+#resume .container > h2 {
+  text-align: center;
+  color: var(--accent-color);
+  margin-bottom: 0.75rem;
+  font-size: clamp(1.3rem, 1vw + 1rem, 1.8rem);
+}
+
+.resume-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: clamp(1rem, 3vw, 2rem);
+  margin-top: 1rem;
+  align-items: start;
+}
+
+.resume-col {
+  display: grid;
+  gap: 1rem;
+}
+
+.resume-item {
+  border: 1px solid rgba(255,255,255,0.12);
+  background: linear-gradient(180deg, #0c1526 0%, #0a1220 100%);
+  color: var(--contrast-color);
+  padding: 1rem 1.1rem;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+.resume-item h3 {
+  margin: 0 0 0.25rem;
+  color: var(--accent-color);
+  font-size: 1.05rem;
+}
+.resume-item .meta {
+  color: var(--nav-color);
+  font-size: 0.92rem;
+  margin: 0 0 0.3rem;
+}
+.resume-item p { margin: 0.25rem 0 0.1rem; color: var(--surface-color); }
+
+.resume-image {
+  display: grid;
+  align-items: start;
+  justify-items: center;
+}
+.resume-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+}
+
+/* Skills */
+#skills .container > h2 {
+  text-align: center;
+  color: var(--accent-color);
+  margin-bottom: 0.75rem;
+  font-size: clamp(1.3rem, 1vw + 1rem, 1.8rem);
+}
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+.skills-list li {
+  background: var(--heading-color);
+  color: var(--contrast-color);
+  padding: 0.65rem 1.25rem;
+  border-radius: 999px;
+  border: 2px solid var(--accent-color);
+  font-weight: 600;
+  transition: transform 0.15s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.skills-list li:hover {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+
+/* Responsiveness */
+@media (max-width: 1000px) {
+  .about-content {
+    grid-template-columns: 1fr 1.4fr;
+  }
+}
+@media (max-width: 800px) {
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+  .about-media img { aspect-ratio: 16 / 9; }
+  .resume-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* A11y helpers */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; border: 0; padding: 0;
+  clip: rect(0 0 0 0); overflow: hidden;
+  white-space: nowrap;
+}

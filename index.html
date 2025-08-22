@@ -60,9 +60,10 @@
             </p>
 
             <div class="btn-row">
-              <a class="btn" href="contact.html">Contact Me!</a>
-              <a class="btn btn-outline" href="about.html">Learn more</a>
+              <a class="btn" href="about.html">Learn more</a>
               <a class="btn btn-outline" href="resume.html">My Resume</a>
+              <a class="btn btn-outline" href="service.html">My Services</a>
+              <a class="btn btn-outline" href="contact.html">Contact Me</a>
             </div>
           </div>
         </div>
@@ -136,66 +137,6 @@
     </footer>
 
     <!-- Scripts -->
-    <script>
-      // Mobile nav toggle with accessibility
-      const hamburger = document.getElementById("hamburger");
-      const nav = document.getElementById("primary-nav");
-
-      function toggleMenu(force) {
-        const wantOpen =
-          typeof force === "boolean"
-            ? force
-            : !nav.classList.contains("active");
-        nav.classList.toggle("active", wantOpen);
-        hamburger.setAttribute("aria-expanded", String(wantOpen));
-      }
-
-      hamburger.addEventListener("click", () => toggleMenu());
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") toggleMenu(false);
-      });
-
-      // Typed effect with reduced-motion respect
-      document.addEventListener("DOMContentLoaded", function () {
-        const typedElement = document.querySelector(".typed");
-        if (!typedElement) return;
-
-        const prefersReduced = window.matchMedia(
-          "(prefers-reduced-motion: reduce)"
-        ).matches;
-        let items = typedElement.getAttribute("data-typed-items") || "";
-        items = items
-          .split(",")
-          .map((i) => i.trim())
-          .filter(Boolean);
-        if (!items.length) return;
-
-        if (prefersReduced) {
-          typedElement.textContent = items[0];
-          return;
-        }
-
-        let index = 0,
-          charIndex = 0,
-          isDeleting = false;
-
-        function typeEffect() {
-          const current = items[index % items.length];
-          typedElement.textContent = isDeleting
-            ? current.substring(0, charIndex--)
-            : current.substring(0, charIndex++);
-
-          if (!isDeleting && charIndex === current.length) {
-            setTimeout(() => (isDeleting = true), 900);
-          } else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            index++;
-          }
-          setTimeout(typeEffect, isDeleting ? 90 : 140);
-        }
-        typeEffect();
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
-
